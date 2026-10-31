@@ -16,5 +16,3 @@ if ! command -v java >/dev/null 2>&1; then
 	sudo apt update
 	sudo apt install openjdk-17-jdk
 fi
-
-python main.py
