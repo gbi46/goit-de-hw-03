@@ -55,3 +55,14 @@ if __name__ == "__main__":
             18,
             25
         ).show(truncate=False)
+    elif sys.argv[1:] == ["top-3-by-age"]:
+        purchases_share_by_users_age_range(
+            purchases_df,
+            products_df,
+            users_df,
+            18,
+            25
+        ).orderBy(
+            ["share_percent", "total_amount", "category"],
+            ascending=[False, False, True]
+        ).limit(3).show(truncate=False)
