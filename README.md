@@ -15,3 +15,13 @@ Data is displayed only when `main.py` is called with the `show` argument:
 ```bash
 .venv/bin/python main.py show
 ```
+
+## Total purchases by category
+
+Run `main.py` with the `sum` argument to display the total purchase amount for each category:
+
+```bash
+.venv/bin/python main.py sum
+```
+
+The total is calculated as the sum of `quantity * price` for each category, rounded to two decimal places and sorted by total amount in descending order.
