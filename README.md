@@ -37,3 +37,15 @@ Run `main.py` with the `sum-by-age` argument to display the total purchase amoun
 To select a different age range, change the last two arguments (`18` and `25`) in the `purchases_by_users_age_range` call in `main.py`. They specify the minimum and maximum age, and both boundaries are included. Age limits are currently configured in the code, not through command-line arguments.
 
 The total is calculated as the sum of `quantity * price` for each category, rounded to two decimal places and sorted by total amount in descending order.
+
+## Purchase shares by category for an age range
+
+Run `main.py` with the `share-by-age` argument to display each category's share of total spending for users aged 18 to 25, inclusive:
+
+```bash
+.venv/bin/python main.py share-by-age
+```
+
+The output includes `category`, `total_amount`, and `share_percent`. Each share is calculated as the category total divided by total spending across all categories for the selected age range, multiplied by 100 and rounded to two decimal places. Results are sorted by total amount in descending order. If total spending is zero, shares are displayed as zero.
+
+To select a different age range, change the last two arguments (`18` and `25`) in the `purchases_share_by_users_age_range` call in `main.py`. Both boundaries are included.

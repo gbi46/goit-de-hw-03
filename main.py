@@ -1,4 +1,4 @@
-from lib.purchases import purchases_by_users_age_range, purchases_sum
+from lib.purchases import purchases_by_users_age_range, purchases_share_by_users_age_range, purchases_sum
 from lib.show_data import show_data
 from pathlib import Path
 from pyspark.sql import SparkSession
@@ -41,6 +41,14 @@ if __name__ == "__main__":
         purchases_sum(purchases_df, products_df)
     elif sys.argv[1:] == ["sum-by-age"]:
         purchases_by_users_age_range(
+            purchases_df,
+            products_df,
+            users_df,
+            18,
+            25
+        ).show(truncate=False)
+    elif sys.argv[1:] == ["share-by-age"]:
+        purchases_share_by_users_age_range(
             purchases_df,
             products_df,
             users_df,
